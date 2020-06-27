@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-title>
       Blank
     </ion-title>
@@ -7,14 +7,104 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- pra que essa parte? -->
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+  <!-- end -->
 
   <div id="container">
     <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>{{ text }}</p>
+    <ion-button (click)="onClickBoy()">huuhahuauh</ion-button>
+    <ion-button fill="outline" color="primary">kek</ion-button>
+    <ion-button fill="solid" color="danger">kek 2</ion-button>
+    <ion-button color="danger">kek 3</ion-button>
+    <ion-button fill="clear" color="success">kek 4</ion-button>
+    <ion-input type="text"></ion-input>
+    <ion-item>
+      <ion-label position="floating">Float label</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Float label number</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <!-- <ion-card>
+      <ion-item>
+        <ion-label position="floating">Float label</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Float label number</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    </ion-card> -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>hehe</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Float label</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Float label number</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <!-- não funfa um segundo content -->
+    <!-- <ion-content>
+      <ion-item>
+        <ion-label position="floating">Float Bruh</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-content> -->
+    <!-- end -->
+    <ion-grid>
+      <ion-row>
+        <!-- <ion-col size-sm="6" offset="3-sm"> -->
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>hehe</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="floating">Float label</ion-label>
+                <!-- <ion-input type="text" (keyup)="onNamechange($event.target.value)"></ion-input> -->
+                <ion-input type="text" [(ngModel)]="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Float label number</ion-label>
+                <!-- <ion-input type="number"(keyup)="onNumberChange($event.target.value)"></ion-input> -->
+                <ion-input type="number" [(ngModel)]="number"></ion-input>
+              </ion-item>
+              <div class="ion-margin-vertical ion-text-right">
+                <ion-button (click)="onClear()" fill="outline" color="danger">
+                  <ion-icon slot="start" name="close"></ion-icon
+                  >Clear</ion-button
+                >
+                <ion-button (click)="onAdd()" color="success"
+                  ><ion-icon slot="end" name="add-outline"></ion-icon
+                  >Add</ion-button
+                >
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list *ngFor="let i of list">
+            <ion-item>{{i.name}} - {{i.number}}</ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
