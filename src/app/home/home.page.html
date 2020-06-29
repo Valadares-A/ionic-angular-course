@@ -99,9 +99,14 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <ion-list *ngFor="let i of list">
-            <ion-item>{{i.name}} - {{i.number}}</ion-item>
+        <ion-col size-md="6" offset-md="3">
+          <ion-list>
+            <ion-item *ngFor="let i of list"
+              >{{i.name}} - {{i.number}}
+              <ion-avatar slot="end">
+                <ion-img [src]=""></ion-img>
+              </ion-avatar></ion-item
+            >
           </ion-list>
         </ion-col>
       </ion-row>
