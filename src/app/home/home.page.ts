@@ -16,6 +16,7 @@ export class HomePage {
       number: 77272,
     },
   ];
+  imgPath: string = "../../assets/chowder.jpg";
 
   constructor(private alertController: AlertController) {}
 
@@ -30,9 +31,9 @@ export class HomePage {
     this.number = value;
   }
   onAdd() {
-    if (this.name === '' || this.number === null) {
+    if (this.name === "" || this.number === null) {
       this.presentAlert();
-      return
+      return;
     }
     this.list.push({ name: this.name, number: this.number });
     console.log(this.list);
@@ -44,11 +45,11 @@ export class HomePage {
   }
   async presentAlert() {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Invalid inputs',
-      subHeader: 'Subtitle',
-      message: 'Inpts are not filled or are with invalid values.',
-      buttons: ['OK']
+      cssClass: "my-custom-class",
+      header: "Invalid inputs",
+      subHeader: "Subtitle",
+      message: "Inpts are not filled or are with invalid values.",
+      buttons: ["OK"],
     });
 
     await alert.present();
